@@ -1,3 +1,10 @@
+"""
+CSE163 Final Project. Non Pronanun & Sirak Yohannes
+May 28, 2023
+This is the executable file that contains all the analysis
+and research questions that we were trying to answer, it is the one
+that reads the csv files.
+"""
 import pandas as pd
 import question1 as q1
 

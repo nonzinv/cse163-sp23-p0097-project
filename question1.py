@@ -1,6 +1,7 @@
 """
 CSE163 Final Project. Non Pronanun & Sirak Yohannes
-This file is responsible for the code of this project, it contains the
+May 23, 2023
+This file is responsible for research question 1, it contains the
 algorithms behind each of the research questions -- to find how the
 COVID19 pandemic affected video game sales and the market share of each
 video game genres.
@@ -11,9 +12,9 @@ from sklearn.linear_model import LinearRegression
 from plotly.subplots import make_subplots
 
 """
-This method takes in a dataframe, it filters out the dataframes for the number
-of sales and genres, then it will predict the number of sales in 2020 and put
-that against the actual number of sales in 2020.
+This method takes in a dataframe, it filters out the dataframes for
+the number of sales and genres, then it will predict the number of
+sales in 2020 and put that against the actual number of sales in 2020.
 """
 def predict_in_2020(df):
     df = df[df['Year'] < 2015]
@@ -69,5 +70,5 @@ def genre_trends(df):
                          scalegroup='one'), 1, 2)
     fig.add_trace(go.Pie(labels=labels, values=values_2015,
                          scalegroup='one'), 2, 2)
-    fig.update_layout(title="Distribution of Video Game Genres between 2000 and 2015")
+    fig.update_layout(title="Distribution of Video Game Genres (2000-2015)")
     fig.write_image("images/genre_trends.png")
