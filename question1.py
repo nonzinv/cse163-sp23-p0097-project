@@ -5,7 +5,6 @@ algorithms behind each of the research questions -- to find how the
 COVID19 pandemic affected video game sales and the market share of each
 video game genres.
 """
-import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
@@ -37,7 +36,7 @@ def predict_in_2020(df):
     fig.add_scatter(x=[2020], y=[actual_sales_2020], mode='markers',
                     name='Actual Sales in 2020')
     fig.update_traces(marker=dict(size=8))
-    fig.write_image("images/predict_2020.png")
+    fig.write_image("images/predict_2020_test.png")
 
 
 """
@@ -71,14 +70,4 @@ def genre_trends(df):
     fig.add_trace(go.Pie(labels=labels, values=values_2015,
                          scalegroup='one'), 2, 2)
     fig.update_layout(title="Distribution of Video Game Genres between 2000 and 2015")
-    fig.write_image("images/genre_trends.png")
-
-
-def main() -> None:
-    game_sales = pd.read_csv('vgsales.csv')
-    predict_in_2020(game_sales)
-    genre_trends(game_sales)
-
-
-if __name__ == '__main__':
-    main()
+    fig.write_image("images/genre_trends_test.png")
