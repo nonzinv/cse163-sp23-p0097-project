@@ -36,7 +36,7 @@ def predict_in_2020(df):
     fig.add_scatter(x=[2020], y=[actual_sales_2020], mode='markers',
                     name='Actual Sales in 2020')
     fig.update_traces(marker=dict(size=8))
-    fig.write_image("images/predict_2020_test.png")
+    fig.write_image("images/predict_2020.png")
 
 
 """
@@ -70,4 +70,4 @@ def genre_trends(df):
     fig.add_trace(go.Pie(labels=labels, values=values_2015,
                          scalegroup='one'), 2, 2)
     fig.update_layout(title="Distribution of Video Game Genres between 2000 and 2015")
-    fig.write_image("images/genre_trends_test.png")
+    fig.write_image("images/genre_trends.png")
