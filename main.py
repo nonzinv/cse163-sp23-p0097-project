@@ -18,8 +18,8 @@ def main() -> None:
     q1.genre_trends(game_sales)
     q2.get_most_popular_video_game_genres(game_sales)
     q2.get_covid_impact_on_video_game_sales_and_popularity_by_genre(game_sales)
-    assert_equals({'Shooter': 3, 'Sports': 1, 'Role-Playing': 1}, q1.file_test(test, 2015))
-    assert_equals({'Role-Playing': 1}, q1.file_test(test, 2000))
+    assert_equals({'Shooter': 3, 'Sports': 1, 'Role-Playing': 1}, q1._file_test(test, 2015))
+    assert_equals({'Role-Playing': 1}, q1._file_test(test, 2000))
 
 
 if __name__ == '__main__':
