@@ -10,6 +10,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from sklearn.linear_model import LinearRegression
 from plotly.subplots import make_subplots
+import csv
 
 """
 This method takes in a dataframe, it filters out the dataframes for
@@ -72,3 +73,12 @@ def genre_trends(df):
                          scalegroup='one'), 2, 2)
     fig.update_layout(title="Distribution of Video Game Genres (2000-2015)")
     fig.write_image("images/genre_trends.png")
+
+
+def file_test(df, year):
+    df = df[df['Year'] == year]
+    genres = df['Genre'].value_counts().to_dict()
+    return genres
+
+
+

@@ -41,7 +41,7 @@ def get_covid_impact_on_video_game_sales_and_popularity_by_genre(df):
 
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
-    plt.show()
+    plt.savefig("images/get_covid_impact")
 
 
 def get_most_popular_video_game_genres(df):
@@ -74,4 +74,4 @@ def get_most_popular_video_game_genres(df):
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig("images/get_popular")
