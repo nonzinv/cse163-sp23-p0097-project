@@ -46,7 +46,7 @@ def get_covid_impact_on_video_game_sales_and_popularity_by_genre(df):
 
 def get_most_popular_video_game_genres(df):
     """
-    This method takes in a dataframe and analyzes the popularity of specific video game genres over time.
+    This method takes in a dataframe and analyzes the popularity of all video game genres over time.
     It groups the data by genre and year, calculates the sum of global sales for each genre, and creates
     a line plot to visualize the sales trends.
 
@@ -60,18 +60,17 @@ def get_most_popular_video_game_genres(df):
 
     pivot_genre_sales = genre_sales.pivot(index='Year', columns='Genre', values='Global_Sales')
 
-    selected_genres = ['Action', 'Sports', 'Role-Playing', 'Shooter']
-
-    selected_genre_sales = pivot_genre_sales[selected_genres]
+    selected_genres = pivot_genre_sales.columns.tolist()
 
     plt.figure(figsize=(10, 6))
     for genre in selected_genres:
-        plt.plot(selected_genre_sales.index, selected_genre_sales[genre], label=genre)
+        plt.plot(pivot_genre_sales.index, pivot_genre_sales[genre], label=genre)
     plt.xlabel('Year')
     plt.ylabel('Global Sales (in millions)')
-    plt.title('Popularity of Specific Video Game Genres Over Time')
+    plt.title('Popularity of Video Game Genres Over Time')
 
     plt.legend()
 
     plt.tight_layout()
     plt.savefig("images/get_popular")
+
